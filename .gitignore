@@ -1,0 +1,9 @@
+# design references (another site's screenshots) — private study only, never published
+reference/
+
+.DS_Store
+review/*.tmp
+node_modules/
+.env
+.env.*
+review/
