@@ -98,50 +98,6 @@
     });
   }
 
-  /* ── Starfield (drawn once; the SVG layer carries the twinkle) ─ */
-  const canvas = document.querySelector('.hero__stars');
-  function drawStars() {
-    if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(rect.width * dpr);
-    canvas.height = Math.round(rect.height * dpr);
-    const ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-    // deterministic scatter so the sky is the same on every visit
-    let seed = 1440;
-    const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-    const count = Math.min(Math.round((rect.width * rect.height) / 2600), 520);
-    for (let i = 0; i < count; i++) {
-      const x = rand() * rect.width;
-      const y = rand() * rect.height * 0.82;
-      const r = rand() < 0.92 ? rand() * 0.8 + 0.2 : rand() * 1.2 + 0.8;
-      const warm = rand() < 0.35;
-      ctx.globalAlpha = 0.25 + rand() * 0.6;
-      ctx.fillStyle = warm ? '#E8D29A' : '#F3EAD3';
-      ctx.beginPath();
-      ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    // a faint band of gathered light across the sky
-    const band = ctx.createLinearGradient(0, rect.height * 0.1, rect.width, rect.height * 0.55);
-    band.addColorStop(0, 'rgba(197,165,90,0)');
-    band.addColorStop(0.5, 'rgba(197,165,90,0.05)');
-    band.addColorStop(1, 'rgba(197,165,90,0)');
-    ctx.globalAlpha = 1;
-    ctx.fillStyle = band;
-    ctx.fillRect(0, 0, rect.width, rect.height);
-  }
-  drawStars();
-  let resizeTimer;
-  let lastWidth = window.innerWidth;
-  window.addEventListener('resize', () => {
-    if (window.innerWidth === lastWidth) return; // ignore mobile toolbar height changes
-    lastWidth = window.innerWidth;
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(drawStars, 200);
-  });
-
   /* ── Free scroll form ────────────────────────────────────── */
   const form = document.querySelector('.free__form');
   if (form) {

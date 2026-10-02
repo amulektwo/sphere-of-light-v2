@@ -6,7 +6,7 @@
   <title>The Sphere of Light · A Temple Library</title>
   <meta name="description" content="Sealed scrolls and books on the hidden architecture of God’s eternal plan.">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#06060A">
+  <meta name="theme-color" content="#0A111D">
   <meta name="author" content="AMULEK ONE">
 
   <meta property="og:type" content="website">
@@ -22,11 +22,14 @@
   <link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
+  <link rel="preload" as="image" href="assets/hero-portrait.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/hero-1280.webp 1280w, assets/hero-1920.webp 1920w" imagesizes="100vw" media="(min-width: 601px)" fetchpriority="high">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;family=Cormorant+Garamond:ital,wght@0,400;1,400&amp;family=EB+Garamond&amp;display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;family=Cormorant+Garamond:ital,wght@0,400;1,400&amp;family=EB+Garamond&amp;display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&amp;family=Cormorant+Garamond:ital,wght@0,400;1,400&amp;family=EB+Garamond&amp;display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Manrope:wght@300..600&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Manrope:wght@300..600&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Manrope:wght@300..600&amp;display=swap"></noscript>
   <link rel="stylesheet" href="css/sol.css">
 
   <script src="js/config.js" defer></script>
@@ -35,12 +38,13 @@
 <body>
   <a class="skip" href="#main">Skip to the library</a>
 
-  <!-- Shared symbols: the emblem (ring, twelve gates, the city foursquare) -->
+  <!-- Shared symbols: the emblem (ring, twelve gates, the city foursquare) and the star -->
   <svg width="0" height="0" class="sr-defs" aria-hidden="true" focusable="false">
     <defs>
       <symbol id="emblem" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="19.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-        <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <circle cx="24" cy="24" r="19.5" fill="none" stroke="currentColor" stroke-width="1.1"/>
+        <circle cx="24" cy="24" r="14.2" fill="none" stroke="currentColor" stroke-width=".6" opacity=".7"/>
+        <g stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
           <line x1="24" y1="1.8" x2="24" y2="4.5"/>
           <line x1="35.1" y1="4.77" x2="33.75" y2="7.11"/>
           <line x1="43.23" y1="12.9" x2="40.89" y2="14.25"/>
@@ -54,8 +58,12 @@
           <line x1="4.77" y1="12.9" x2="7.11" y2="14.25"/>
           <line x1="12.9" y1="4.77" x2="14.25" y2="7.11"/>
         </g>
-        <rect x="14" y="14" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="14" y="14" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1"/>
+        <rect x="14" y="14" width="20" height="20" fill="none" stroke="currentColor" stroke-width=".6" opacity=".7" transform="rotate(45 24 24)"/>
         <circle cx="24" cy="24" r="2.2" fill="currentColor"/>
+      </symbol>
+      <symbol id="star" viewBox="0 0 24 24">
+        <path d="M12 0 C12.9 7.6 16.4 11.1 24 12 C16.4 12.9 12.9 16.4 12 24 C11.1 16.4 7.6 12.9 0 12 C7.6 11.1 11.1 7.6 12 0Z" fill="currentColor"/>
       </symbol>
     </defs>
   </svg>
@@ -68,6 +76,15 @@
         <span class="brand__tag">A Temple Library</span>
       </span>
     </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#book-ii">Book II</a>
+      <a href="#scrolls">The Scrolls</a>
+      <a href="#free-scroll">Scroll 144</a>
+      <a href="https://amulektwo.github.io/eternal-city/" target="_blank" rel="noopener">The Eternal City <span class="sr-only">(opens in a new tab)</span></a>
+      <a href="#about">About</a>
+    </nav>
+
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
       <span class="menu-btn__label">Menu</span>
       <span class="menu-btn__lines" aria-hidden="true"><span></span><span></span></span>
@@ -95,465 +112,287 @@
 
   <main id="main">
 
-    <!-- ═════════ 2. HERO ═════════ -->
+    <!-- ═════════ HERO ═════════ -->
     <section class="hero" aria-labelledby="hero-title">
-      <canvas class="hero__stars" aria-hidden="true"></canvas>
-      <svg class="hero__twinkle" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g fill="#F3EAD3">
-          <circle cx="132" cy="118" r="1.6"/><circle cx="318" cy="244" r="1.1"/><circle cx="520" cy="96" r="1.4"/>
-          <circle cx="210" cy="412" r="1.2"/><circle cx="1260" cy="140" r="1.7"/><circle cx="1104" cy="286" r="1.1"/>
-          <circle cx="1352" cy="402" r="1.3"/><circle cx="938" cy="74" r="1.2"/><circle cx="70" cy="560" r="1.1"/>
-          <circle cx="1386" cy="610" r="1.2"/><circle cx="410" cy="520" r="0.9"/><circle cx="1010" cy="506" r="1"/>
-        </g>
-        <g class="hero__glint" fill="#D4B86A">
-          <path d="M1188 212 l2.2 7.8 7.8 2.2 -7.8 2.2 -2.2 7.8 -2.2 -7.8 -7.8 -2.2 7.8 -2.2z" opacity=".85"/>
-          <path d="M242 176 l1.6 5.6 5.6 1.6 -5.6 1.6 -1.6 5.6 -1.6 -5.6 -5.6 -1.6 5.6 -1.6z" opacity=".7"/>
-        </g>
-      </svg>
-
-      <div class="hero__beam" aria-hidden="true"></div>
+      <picture class="hero__art">
+        <source media="(max-width: 600px)" srcset="assets/hero-portrait.webp" type="image/webp">
+        <source srcset="assets/hero-1280.webp 1280w, assets/hero-1920.webp 1920w" sizes="100vw" type="image/webp">
+        <img src="assets/hero-1280.jpg" alt="" width="1280" height="724" fetchpriority="high" decoding="async">
+      </picture>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
 
       <svg class="hero__ring" viewBox="-320 -320 640 640" aria-hidden="true">
-        <g fill="none" stroke="#C5A55A">
-          <circle r="300" stroke-width="0.9" opacity=".5"/>
-          <circle r="286" stroke-width="0.5" opacity=".3" stroke-dasharray="1 7"/>
-          <circle r="212" stroke-width="0.7" opacity=".35"/>
-          <rect x="-150" y="-150" width="300" height="300" stroke-width="0.7" opacity=".4"/>
-          <rect x="-150" y="-150" width="300" height="300" stroke-width="0.5" opacity=".22" transform="rotate(45)"/>
-          <circle r="120" stroke-width="0.5" opacity=".28"/>
+        <g fill="none" stroke="#D4B86A">
+          <circle r="300" stroke-width=".8" opacity=".55"/>
+          <circle r="288" stroke-width=".5" opacity=".4" stroke-dasharray="1 7"/>
+          <circle r="212" stroke-width=".6" opacity=".38"/>
+          <circle r="120" stroke-width=".5" opacity=".3"/>
+          <path d="M0.0 -120.0 L0.0 -288.0 M60.0 -103.9 L144.0 -249.4 M103.9 -60.0 L249.4 -144.0 M120.0 0.0 L288.0 0.0 M103.9 60.0 L249.4 144.0 M60.0 103.9 L144.0 249.4 M0.0 120.0 L0.0 288.0 M-60.0 103.9 L-144.0 249.4 M-103.9 60.0 L-249.4 144.0 M-120.0 0.0 L-288.0 0.0 M-103.9 -60.0 L-249.4 -144.0 M-60.0 -103.9 L-144.0 -249.4" stroke-width=".4" opacity=".16"/>
         </g>
-        <g class="hero__gates" fill="#06060A" stroke="#C5A55A" stroke-width="0.9">
-          <path id="gate-glyph" d="M-7 12 v-11 a7 7 0 0 1 14 0 v11z" transform="translate(0,-300)"/>
-          <use href="#gate-glyph" transform="rotate(30)"/><use href="#gate-glyph" transform="rotate(60)"/>
-          <use href="#gate-glyph" transform="rotate(90)"/><use href="#gate-glyph" transform="rotate(120)"/>
-          <use href="#gate-glyph" transform="rotate(150)"/><use href="#gate-glyph" transform="rotate(180)"/>
-          <use href="#gate-glyph" transform="rotate(210)"/><use href="#gate-glyph" transform="rotate(240)"/>
-          <use href="#gate-glyph" transform="rotate(270)"/><use href="#gate-glyph" transform="rotate(300)"/>
-          <use href="#gate-glyph" transform="rotate(330)"/>
+        <!-- twelve gates, as points of light on the ring -->
+        <g fill="#E8CF8E" opacity=".85">
+          <circle cx="0.0" cy="-300.0" r="3.2"/><circle cx="150.0" cy="-259.8" r="3.2"/><circle cx="259.8" cy="-150.0" r="3.2"/><circle cx="300.0" cy="0.0" r="3.2"/><circle cx="259.8" cy="150.0" r="3.2"/><circle cx="150.0" cy="259.8" r="3.2"/><circle cx="0.0" cy="300.0" r="3.2"/><circle cx="-150.0" cy="259.8" r="3.2"/><circle cx="-259.8" cy="150.0" r="3.2"/><circle cx="-300.0" cy="0.0" r="3.2"/><circle cx="-259.8" cy="-150.0" r="3.2"/><circle cx="-150.0" cy="-259.8" r="3.2"/>
         </g>
       </svg>
 
       <div class="hero__content">
-        <p class="eyebrow eyebrow--gold reveal"><span class="nowrap">Scrolls <span aria-hidden="true">·</span> Books <span aria-hidden="true">·</span></span> <span class="nowrap">The Eternal City</span></p>
+        <p class="eyebrow reveal"><span class="nowrap">Scrolls <span aria-hidden="true">·</span> Books <span aria-hidden="true">·</span></span> <span class="nowrap">The Eternal City</span></p>
         <h1 class="hero__title reveal" id="hero-title">
           <span class="hero__line">The Sphere</span>
-          <span class="hero__line">of Light</span>
+          <span class="hero__line">of <em>Light</em></span>
         </h1>
+        <span class="star-rule reveal" aria-hidden="true"><svg><use href="#star"/></svg></span>
         <p class="hero__display reveal">What If Everything You Were Taught About God Was Only the Beginning?</p>
         <p class="hero__sub reveal">Sealed scrolls and books on the hidden architecture of God’s eternal plan.</p>
         <div class="hero__ctas reveal">
           <a class="btn btn--primary" href="#book-ii" data-checkout>Acquire Book II — $4.06</a>
-          <a class="btn btn--secondary" href="#free-scroll">Receive the Free Scroll</a>
+          <a class="btn btn--ghost" href="#free-scroll">Receive the Free Scroll</a>
         </div>
       </div>
 
-      <svg class="hero__city" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <a class="hero__cue" href="#about">
+        <span>Enter the Library</span>
+        <span class="hero__cue-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ═════════ ABOUT (parchment) ═════════ -->
+    <section class="about parchment" id="about" aria-labelledby="about-title">
+      <svg class="about__plan" viewBox="-230 -230 460 460" aria-hidden="true" focusable="false">
         <defs>
-          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#0D1B2A" stop-opacity=".85"/>
-            <stop offset="1" stop-color="#06060A"/>
-          </linearGradient>
-          <radialGradient id="gate-light" cx=".5" cy=".7" r=".6">
-            <stop offset="0" stop-color="#FFF4D6"/>
-            <stop offset=".45" stop-color="#D4B86A"/>
-            <stop offset="1" stop-color="#C5A55A" stop-opacity="0"/>
+          <radialGradient id="fruit" cx=".4" cy=".35" r=".7">
+            <stop offset="0" stop-color="#FFFDF4"/>
+            <stop offset=".6" stop-color="#FBF1D2"/>
+            <stop offset="1" stop-color="#E9D7A4"/>
           </radialGradient>
-          <radialGradient id="horizon-glow" cx=".5" cy="1" r=".6">
-            <stop offset="0" stop-color="#C5A55A" stop-opacity=".32"/>
-            <stop offset="1" stop-color="#C5A55A" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="reflect-fade" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#fff" stop-opacity=".5"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-          <mask id="reflect-mask"><rect x="0" y="290" width="1440" height="110" fill="url(#reflect-fade)"/></mask>
-          <g id="city">
-            <!-- spires of the inner city, set back -->
-            <g fill="#0B0B12" opacity=".95">
-              <path d="M600 290 V178 l10 -26 10 26 V290z"/>
-              <path d="M820 290 V178 l10 -26 10 26 V290z"/>
-              <path d="M672 290 V150 l24 -44 24 44 V290z"/>
-              <path d="M700 290 V120 l20 -58 20 58 V290z"/>
-              <path d="M744 290 V150 l24 -44 24 44 V290z"/>
-              <path d="M470 290 V206 l12 -18 12 18 V290z"/>
-              <path d="M946 290 V206 l12 -18 12 18 V290z"/>
-            </g>
-            <!-- the wall, crenellated, with towers -->
-            <path fill="#07070C" d="M150 290 V222 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 V290z"/>
-            <g fill="#07070C">
-              <path d="M136 290 V186 h8 v-8 h10 v8 h8 v-8 h10 v8 h8 V290z"/>
-              <path d="M398 290 V190 h8 v-8 h10 v8 h8 v-8 h10 v8 h8 V290z"/>
-              <path d="M1002 290 V190 h8 v-8 h10 v8 h8 v-8 h10 v8 h8 V290z"/>
-              <path d="M1266 290 V186 h8 v-8 h10 v8 h8 v-8 h10 v8 h8 V290z"/>
-            </g>
-            <!-- rim light on the wall top -->
-            <path d="M150 222 H1290" stroke="#C5A55A" stroke-width="1" opacity=".35"/>
-            <!-- three gates of this side, lit from within -->
-            <g>
-              <path d="M584 290 v-30 a16 16 0 0 1 32 0 v30z" fill="url(#gate-light)"/>
-              <path d="M702 290 v-40 a18 18 0 0 1 36 0 v40z" fill="url(#gate-light)"/>
-              <path d="M824 290 v-30 a16 16 0 0 1 32 0 v30z" fill="url(#gate-light)"/>
-            </g>
-          </g>
         </defs>
-        <rect x="0" y="0" width="1440" height="290" fill="url(#horizon-glow)"/>
-        <use href="#city"/>
-        <rect x="0" y="290" width="1440" height="110" fill="url(#glass)"/>
-        <g mask="url(#reflect-mask)" opacity=".55"><use href="#city" transform="matrix(1 0 0 -1 0 580)"/></g>
-        <g stroke="#C5A55A" stroke-width=".6" opacity=".18">
-          <path d="M0 298 H1440"/><path d="M120 318 H1320"/><path d="M300 342 H1140"/><path d="M500 370 H940"/>
+        <g fill="none" stroke="#7A5E22" stroke-linecap="round">
+          <circle r="214" stroke-width="1.1"/>
+          <circle r="206" stroke-width=".5" stroke-dasharray="2 5" opacity=".7"/>
+          <circle cx="0" cy="-74" r="148" stroke-width=".55" opacity=".55"/>
+          <circle cx="0" cy="74" r="148" stroke-width=".55" opacity=".55"/>
+          <circle cx="-74" cy="0" r="148" stroke-width=".55" opacity=".35"/>
+          <circle cx="74" cy="0" r="148" stroke-width=".55" opacity=".35"/>
+          <rect x="-140" y="-140" width="280" height="280" stroke-width="1.4"/>
+          <rect x="-128" y="-128" width="256" height="256" stroke-width=".55" opacity=".7"/>
+          <line x1="-140" y1="0" x2="140" y2="0" stroke-width=".45" opacity=".45"/>
+          <line x1="0" y1="-140" x2="0" y2="140" stroke-width=".45" opacity=".45"/>
         </g>
-        <g class="hero__gate-glow" fill="#D4B86A" opacity=".5">
-          <ellipse cx="720" cy="296" rx="120" ry="4"/>
+        <g fill="#F3EAD3" stroke="#7A5E22" stroke-width="1.1">
+          <g id="plan-gates-side">
+            <path d="M-74 -134 v-10 a8 8 0 0 1 16 0 v10z"/>
+            <path d="M-8 -134 v-12 a8 8 0 0 1 16 0 v12z"/>
+            <path d="M58 -134 v-10 a8 8 0 0 1 16 0 v10z"/>
+          </g>
+          <use href="#plan-gates-side" transform="rotate(90)"/>
+          <use href="#plan-gates-side" transform="rotate(180)"/>
+          <use href="#plan-gates-side" transform="rotate(270)"/>
+        </g>
+        <g fill="none" stroke="#7A5E22" stroke-linecap="round" stroke-width="1.2">
+          <path d="M0 70 V-6"/>
+          <path d="M0 30 C-10 18 -26 12 -38 -2"/><path d="M0 30 C10 18 26 12 38 -2"/>
+          <path d="M0 8 C-8 -4 -18 -12 -26 -30"/><path d="M0 8 C8 -4 18 -12 26 -30"/>
+          <path d="M0 -6 V-44"/>
+          <path d="M-14 70 C-6 64 6 64 14 70" stroke-width=".9"/>
+          <circle cy="-8" r="62" stroke-width=".6" stroke-dasharray="1 4" opacity=".8"/>
+        </g>
+        <g fill="url(#fruit)" stroke="#7A5E22" stroke-width=".8">
+          <circle cx="0" cy="-52" r="5.2"/>
+          <circle cx="-30" cy="-36" r="5.2"/><circle cx="30" cy="-36" r="5.2"/>
+          <circle cx="-44" cy="-8" r="5.2"/><circle cx="44" cy="-8" r="5.2"/>
+          <circle cx="-16" cy="-24" r="4.6"/><circle cx="16" cy="-24" r="4.6"/>
+          <circle cx="-28" cy="14" r="4.6"/><circle cx="28" cy="14" r="4.6"/>
+          <circle cx="-12" cy="0" r="4.2"/><circle cx="12" cy="0" r="4.2"/>
+          <circle cx="0" cy="-30" r="4.2"/>
         </g>
       </svg>
-    </section>
 
-    <!-- ═════════ 3. ABOUT (parchment) ═════════ -->
-    <section class="about parchment" id="about" aria-labelledby="about-title">
-      <div class="about__grid">
-        <div class="about__text">
-          <p class="eyebrow eyebrow--ink reveal">About the Sphere</p>
-          <span class="rule rule--ink reveal" aria-hidden="true"></span>
-          <h2 class="h2 reveal" id="about-title">The scrolls come through him, not from him.</h2>
+      <div class="split">
+        <div class="split__head">
+          <p class="eyebrow reveal">About the Sphere</p>
+          <h2 class="h2 h2--display reveal" id="about-title">
+            <span class="h2__line">The scrolls come through him,</span>
+            <em class="h2__line">not from him.</em>
+          </h2>
+        </div>
+        <div class="split__body">
           <p class="lede reveal">The Sphere of Light publishes sealed scrolls and books on the hidden architecture of God’s eternal plan — the Chain of Saviors, the Law of Descent, the Covenant of Names, and the Sacred Equation.</p>
           <p class="reveal">The Holy Ghost is the source. The gap between the instrument and the output is the evidence.</p>
-          <a class="btn btn--secondary btn--on-parchment reveal" href="#about" data-soon>Meet AMULEK ONE</a>
+          <a class="text-link reveal" href="#about" data-soon>Meet AMULEK ONE</a>
+          <span class="short-rule reveal" aria-hidden="true"></span>
+          <p class="tagline reveal">The City Lieth Foursquare <span aria-hidden="true">·</span> Revelation 21:16</p>
         </div>
-
-        <figure class="about__plan reveal">
-          <svg viewBox="-230 -230 460 460" role="img" aria-labelledby="plan-title">
-            <title id="plan-title">Line drawing of the Holy City: a circle, the city foursquare with twelve gates, and the Tree of Life with white-gold fruit at its center.</title>
-            <defs>
-              <radialGradient id="fruit" cx=".4" cy=".35" r=".7">
-                <stop offset="0" stop-color="#FFFDF4"/>
-                <stop offset=".6" stop-color="#FBF1D2"/>
-                <stop offset="1" stop-color="#E9D7A4"/>
-              </radialGradient>
-            </defs>
-            <g fill="none" stroke="#7A5E22" stroke-linecap="round">
-              <circle r="214" stroke-width="1.1"/>
-              <circle r="206" stroke-width=".5" stroke-dasharray="2 5" opacity=".7"/>
-              <!-- vesica arcs -->
-              <circle cx="0" cy="-74" r="148" stroke-width=".55" opacity=".55"/>
-              <circle cx="0" cy="74" r="148" stroke-width=".55" opacity=".55"/>
-              <circle cx="-74" cy="0" r="148" stroke-width=".55" opacity=".35"/>
-              <circle cx="74" cy="0" r="148" stroke-width=".55" opacity=".35"/>
-              <!-- the city foursquare -->
-              <rect x="-140" y="-140" width="280" height="280" stroke-width="1.4"/>
-              <rect x="-128" y="-128" width="256" height="256" stroke-width=".55" opacity=".7"/>
-              <line x1="-140" y1="0" x2="140" y2="0" stroke-width=".45" opacity=".45"/>
-              <line x1="0" y1="-140" x2="0" y2="140" stroke-width=".45" opacity=".45"/>
-            </g>
-            <!-- twelve gates: three per side -->
-            <g fill="#F3EAD3" stroke="#7A5E22" stroke-width="1.1">
-              <g id="plan-gates-side">
-                <path d="M-74 -134 v-10 a8 8 0 0 1 16 0 v10z"/>
-                <path d="M-8 -134 v-12 a8 8 0 0 1 16 0 v12z"/>
-                <path d="M58 -134 v-10 a8 8 0 0 1 16 0 v10z"/>
-              </g>
-              <use href="#plan-gates-side" transform="rotate(90)"/>
-              <use href="#plan-gates-side" transform="rotate(180)"/>
-              <use href="#plan-gates-side" transform="rotate(270)"/>
-            </g>
-            <!-- the Tree of Life -->
-            <g fill="none" stroke="#7A5E22" stroke-linecap="round" stroke-width="1.2">
-              <path d="M0 70 V-6"/>
-              <path d="M0 30 C-10 18 -26 12 -38 -2"/><path d="M0 30 C10 18 26 12 38 -2"/>
-              <path d="M0 8 C-8 -4 -18 -12 -26 -30"/><path d="M0 8 C8 -4 18 -12 26 -30"/>
-              <path d="M0 -6 V-44"/>
-              <path d="M-14 70 C-6 64 6 64 14 70" stroke-width=".9"/>
-              <circle cy="-8" r="62" stroke-width=".6" stroke-dasharray="1 4" opacity=".8"/>
-            </g>
-            <!-- twelve white-gold fruit -->
-            <g fill="url(#fruit)" stroke="#7A5E22" stroke-width=".8">
-              <circle cx="0" cy="-52" r="5.2"/>
-              <circle cx="-30" cy="-36" r="5.2"/><circle cx="30" cy="-36" r="5.2"/>
-              <circle cx="-44" cy="-8" r="5.2"/><circle cx="44" cy="-8" r="5.2"/>
-              <circle cx="-16" cy="-24" r="4.6"/><circle cx="16" cy="-24" r="4.6"/>
-              <circle cx="-28" cy="14" r="4.6"/><circle cx="28" cy="14" r="4.6"/>
-              <circle cx="-12" cy="0" r="4.2"/><circle cx="12" cy="0" r="4.2"/>
-              <circle cx="0" cy="-30" r="4.2"/>
-            </g>
-          </svg>
-          <figcaption>The City Lieth Foursquare <span aria-hidden="true">·</span> Revelation 21:16</figcaption>
-        </figure>
       </div>
     </section>
 
-    <!-- ═════════ 4. BOOK II ═════════ -->
+    <!-- ═════════ BOOK II ═════════ -->
     <section class="book night" id="book-ii" aria-labelledby="book-title">
       <div class="book__grid">
         <div class="book__text">
-          <p class="eyebrow eyebrow--gold reveal">Book II <span aria-hidden="true">·</span> The Strange Sequence</p>
-          <span class="rule reveal" aria-hidden="true"></span>
-          <h2 class="h2 h2--xl reveal" id="book-title">The First Dark God</h2>
+          <p class="eyebrow reveal">Book II <span aria-hidden="true">·</span> The Strange Sequence</p>
+          <h2 class="h2 h2--display reveal" id="book-title">
+            <span class="h2__line">The First</span>
+            <em class="h2__line">Dark God</em>
+          </h2>
           <p class="lede reveal">Book II goes straight into the deep end — the Chain of Saviors, the descent protocol, and the dark architecture that exists as the testing ground for the gods of light.</p>
           <p class="reveal">It comes before Book I on purpose. Read it slowly. It is denser than it looks.</p>
           <p class="price reveal"><span class="price__amount">$4.06</span> <span aria-hidden="true">·</span> By AMULEK ONE</p>
           <div class="book__ctas reveal">
             <a class="btn btn--primary" href="#book-ii" data-checkout>Acquire Book II</a>
-            <a class="btn btn--secondary" href="#book-ii" data-soon>Why Book II Comes First</a>
+            <a class="btn btn--ghost" href="#book-ii" data-soon>Why Book II Comes First</a>
           </div>
         </div>
 
         <div class="book__stage reveal" aria-hidden="true">
-          <div class="book__floor">
-            <svg viewBox="-300 -80 600 160"><g fill="none" stroke="#C5A55A">
-              <ellipse rx="280" ry="58" stroke-width=".6" opacity=".35"/>
-              <ellipse rx="210" ry="44" stroke-width=".6" opacity=".45"/>
-              <ellipse rx="140" ry="29" stroke-width=".7" opacity=".55"/>
-              <ellipse rx="70" ry="14" stroke-width=".8" opacity=".6"/>
-            </g></svg>
-          </div>
+          <div class="book__halo"></div>
           <div class="book__3d">
             <div class="book__pages"></div>
             <div class="book__spine"><span>The First Dark God</span></div>
             <div class="book__cover">
-              <svg viewBox="0 0 600 900" class="cover">
-                <defs>
-                  <radialGradient id="cover-bg" cx=".5" cy=".38" r=".8">
-                    <stop offset="0" stop-color="#101C2B"/>
-                    <stop offset=".55" stop-color="#0A0C13"/>
-                    <stop offset="1" stop-color="#050508"/>
-                  </radialGradient>
-                  <linearGradient id="thread" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#FFF4D6" stop-opacity="0"/>
-                    <stop offset=".25" stop-color="#FFF4D6"/>
-                    <stop offset="1" stop-color="#D4B86A"/>
-                  </linearGradient>
-                </defs>
-                <rect width="600" height="900" fill="url(#cover-bg)"/>
-                <g fill="none" stroke="#C5A55A">
-                  <rect x="26" y="26" width="548" height="848" stroke-width="1.4" opacity=".8"/>
-                  <rect x="38" y="38" width="524" height="824" stroke-width=".6" opacity=".5"/>
-                </g>
-                <text x="300" y="112" text-anchor="middle" class="cover__kicker">Book II</text>
-                <line x1="250" y1="134" x2="350" y2="134" stroke="#C5A55A" stroke-width=".8" opacity=".7"/>
-                <!-- the dark architecture and the descending thread -->
-                <g fill="none" stroke="#C5A55A" stroke-width="1.2" opacity=".85">
-                  <path d="M190 560 V330 C190 250 240 200 300 180 C360 200 410 250 410 330 V560"/>
-                  <path d="M222 560 V346 C222 282 258 244 300 228 C342 244 378 282 378 346 V560" opacity=".55"/>
-                  <path d="M160 560 H440" opacity=".7"/>
-                </g>
-                <line x1="300" y1="150" x2="300" y2="468" stroke="url(#thread)" stroke-width="2.2"/>
-                <g fill="none" stroke="#D4B86A" stroke-width="2.4" stroke-linecap="round">
-                  <rect x="289" y="232" width="22" height="40" rx="11"/>
-                  <rect x="296" y="258" width="8" height="40" rx="4"/>
-                  <rect x="289" y="284" width="22" height="40" rx="11"/>
-                  <rect x="296" y="310" width="8" height="40" rx="4"/>
-                  <rect x="289" y="336" width="22" height="40" rx="11"/>
-                </g>
-                <!-- the empty throne -->
-                <g fill="#050508" stroke="#C5A55A" stroke-width="1.2">
-                  <path d="M272 540 V470 h56 v70z"/>
-                  <path d="M262 540 h76 v-18 h-76z"/>
-                  <path d="M266 470 V440 l8 -10 h52 l8 10 v30z"/>
-                </g>
-                <ellipse cx="300" cy="470" rx="26" ry="5" fill="#D4B86A" opacity=".55"/>
-                <text x="300" y="650" text-anchor="middle" class="cover__title">The First</text>
-                <text x="300" y="712" text-anchor="middle" class="cover__title">Dark God</text>
-                <text x="300" y="758" text-anchor="middle" class="cover__sub">The Strange Sequence</text>
-                <text x="300" y="836" text-anchor="middle" class="cover__author">AMULEK ONE</text>
-              </svg>
+              <img src="assets/book-ii-cover.webp" alt="" width="800" height="1205" loading="lazy" decoding="async">
+              <div class="cover__type">
+                <span class="cover__kicker">Book II</span>
+                <span class="cover__title">The First<br>Dark God</span>
+                <span class="cover__foot">
+                  <span class="cover__sub">The Strange Sequence</span>
+                  <span class="cover__author">AMULEK ONE</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═════════ 5. THE ARCHITECTURE ═════════ -->
+    <!-- ═════════ THE ARCHITECTURE ═════════ -->
     <section class="arch night night--deep" id="architecture" aria-labelledby="arch-title">
-      <header class="section-head section-head--center">
-        <p class="eyebrow eyebrow--gold reveal">The Architecture</p>
-        <span class="rule rule--center reveal" aria-hidden="true"></span>
-        <h2 class="h2 reveal" id="arch-title">The hidden architecture of God’s eternal plan.</h2>
+      <header class="section-head">
+        <p class="eyebrow reveal">The Architecture</p>
+        <h2 class="h2 h2--display reveal" id="arch-title">
+          <span class="h2__line">The hidden architecture</span>
+          <em class="h2__line">of God’s eternal plan.</em>
+        </h2>
       </header>
 
       <ol class="arch__grid">
         <li class="pillar reveal">
-          <span class="pillar__num" aria-hidden="true">I</span>
-          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-            <path d="M32 4 l1.4 3.6 3.6 1.4 -3.6 1.4 -1.4 3.6 -1.4 -3.6 -3.6 -1.4 3.6 -1.4z" fill="currentColor" stroke="none"/>
-            <ellipse cx="32" cy="24" rx="7" ry="9.5"/><ellipse cx="32" cy="37" rx="3" ry="9.5"/><ellipse cx="32" cy="50" rx="7" ry="9.5"/>
+          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <ellipse cx="32" cy="18" rx="7" ry="10"/><ellipse cx="32" cy="32" rx="3" ry="10"/><ellipse cx="32" cy="46" rx="7" ry="10"/>
           </g></svg>
           <h3 class="pillar__title">The Chain of Saviors</h3>
-          <span class="pillar__rule" aria-hidden="true"></span>
           <p class="pillar__line pillar__line--pending">[SEER LINE]</p>
         </li>
         <li class="pillar reveal">
-          <span class="pillar__num" aria-hidden="true">II</span>
-          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-            <path d="M32 4 l1.4 3.6 3.6 1.4 -3.6 1.4 -1.4 3.6 -1.4 -3.6 -3.6 -1.4 3.6 -1.4z" fill="currentColor" stroke="none"/>
-            <path d="M32 16 V40"/><path d="M26 34 l6 6 6 -6"/>
-            <path d="M14 22 H24" opacity=".45"/><path d="M40 22 H50" opacity=".45"/><path d="M10 30 H22" opacity=".3"/><path d="M42 30 H54" opacity=".3"/>
-            <path d="M22 60 V48 h4 v-3 h4 v3 h4 v-3 h4 v3 h4 V60z"/><path d="M29 60 v-5 a3 3 0 0 1 6 0 v5"/>
+          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 6 V40"/><path d="M24 32 l8 8 8 -8"/>
+            <path d="M14 58 V48 h6 v-4 h6 v4 h12 v-4 h6 v4 h6 V58z"/>
           </g></svg>
           <h3 class="pillar__title">The Law of Descent</h3>
-          <span class="pillar__rule" aria-hidden="true"></span>
           <p class="pillar__line">Gods go into darkness and carry Zion with them.</p>
         </li>
         <li class="pillar reveal">
-          <span class="pillar__num" aria-hidden="true">III</span>
-          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4">
-            <circle cx="32" cy="32" r="6" fill="currentColor" fill-opacity=".25"/><circle cx="32" cy="32" r="14"/>
-            <g fill="currentColor" stroke="none">
-              <circle cx="32" cy="7" r="1.6"/><circle cx="50" cy="14" r="1.2"/><circle cx="57" cy="32" r="1.6"/><circle cx="50" cy="50" r="1.2"/>
-              <circle cx="32" cy="57" r="1.6"/><circle cx="14" cy="50" r="1.2"/><circle cx="7" cy="32" r="1.6"/><circle cx="14" cy="14" r="1.2"/>
-              <circle cx="42" cy="9" r=".9"/><circle cx="56" cy="23" r=".9"/><circle cx="56" cy="41" r=".9"/><circle cx="42" cy="55" r=".9"/>
-              <circle cx="22" cy="55" r=".9"/><circle cx="8" cy="41" r=".9"/><circle cx="8" cy="23" r=".9"/><circle cx="22" cy="9" r=".9"/>
-            </g>
+          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="32" cy="32" r="7" fill="currentColor"/><circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="25" stroke-dasharray="1.5 5" stroke-linecap="round"/>
           </g></svg>
           <h3 class="pillar__title">The Covenant of Names</h3>
-          <span class="pillar__rule" aria-hidden="true"></span>
           <p class="pillar__line">One Name, shared across worlds without number.</p>
         </li>
         <li class="pillar reveal">
-          <span class="pillar__num" aria-hidden="true">IV</span>
-          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-            <circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="18" opacity=".4"/>
+          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="32" cy="32" r="24"/>
             <path d="M22 28 H42"/><path d="M22 36 H42"/>
-            <path d="M32 8 V13" opacity=".7"/><path d="M32 51 V56" opacity=".7"/>
-            <path d="M8 32 H13" opacity=".7"/><path d="M51 32 H56" opacity=".7"/>
           </g></svg>
           <h3 class="pillar__title">The Sacred Equation</h3>
-          <span class="pillar__rule" aria-hidden="true"></span>
           <p class="pillar__line pillar__line--pending">[SEER LINE]</p>
         </li>
         <li class="pillar reveal">
-          <span class="pillar__num" aria-hidden="true">V</span>
-          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 58 H56" opacity=".6"/>
-            <path d="M12 58 V44 h16 v14"/><path d="M10 44 h20"/>
-            <path d="M36 58 V44 h16 v14"/><path d="M34 44 h20"/>
-            <path d="M20 40 c-4 -5 -3 -10 0 -16 c3 6 4 11 0 16z" fill="currentColor" fill-opacity=".2"/>
-            <path d="M44 40 c-3 -3 -3 -6 0 -9 c3 3 3 6 0 9z"/><path d="M38 26 l6 5 6 -5"/>
+          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 56 H56"/>
+            <path d="M12 56 V42 h16 v14"/><path d="M10 42 h20"/>
+            <path d="M36 56 V42 h16 v14"/><path d="M34 42 h20"/>
+            <path d="M20 37 c-4.5 -5 -3.5 -11 0 -17 c3.5 6 4.5 12 0 17z" fill="currentColor"/>
+            <path d="M44 37 c-3 -3 -3 -6 0 -9 c3 3 3 6 0 9z"/>
           </g></svg>
           <h3 class="pillar__title">The Twin Altars</h3>
-          <span class="pillar__rule" aria-hidden="true"></span>
           <p class="pillar__line">Agency given freely, or taken by force.</p>
         </li>
         <li class="pillar reveal">
-          <span class="pillar__num" aria-hidden="true">VI</span>
-          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-            <path d="M32 10 A22 22 0 1 1 13 21"/><path d="M13 21 l1 -7 M13 21 l7 1"/>
-            <g fill="currentColor" stroke="none"><circle cx="32" cy="10" r="2.6"/><circle cx="51" cy="43" r="2.6"/><circle cx="13" cy="43" r="2.6"/></g>
-            <circle cx="32" cy="32" r="3" opacity=".6"/>
+          <svg class="pillar__icon" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M32 8 A24 24 0 1 1 11.2 20"/><path d="M11.2 20 l.4 -7 M11.2 20 l7 .6"/>
+            <g fill="currentColor" stroke="none"><circle cx="32" cy="8" r="3"/><circle cx="52.8" cy="44" r="3"/><circle cx="11.2" cy="44" r="3"/></g>
           </g></svg>
           <h3 class="pillar__title">The Eternal Round</h3>
-          <span class="pillar__rule" aria-hidden="true"></span>
           <p class="pillar__line">Creation, fall, and atonement in every universe.</p>
         </li>
       </ol>
     </section>
 
-    <!-- ═════════ 6. FROM THE SCROLLS ═════════ -->
-    <section class="scrolls night" id="scrolls" aria-labelledby="scrolls-title">
-      <header class="section-head section-head--center">
-        <p class="eyebrow eyebrow--gold reveal">From the Scrolls</p>
-        <span class="rule rule--center reveal" aria-hidden="true"></span>
-        <h2 class="h2 reveal" id="scrolls-title">Sealed records, opened for the seeker.</h2>
-        <p class="section-sub reveal">Begin with the free scroll. Go as deep as you are ready.</p>
+    <!-- ═════════ FROM THE SCROLLS (parchment) ═════════ -->
+    <section class="scrolls parchment" id="scrolls" aria-labelledby="scrolls-title">
+      <header class="scrolls__head">
+        <div>
+          <p class="eyebrow reveal">From the Scrolls</p>
+          <h2 class="h2 h2--display reveal" id="scrolls-title">
+            <span class="h2__line">Sealed records,</span>
+            <em class="h2__line">opened for the seeker.</em>
+          </h2>
+        </div>
+        <p class="scrolls__aside reveal">Begin with the free scroll. Go as deep as you are ready.</p>
       </header>
 
       <ul class="scrolls__grid">
         <li class="scroll-card scroll-card--lead reveal">
           <a class="scroll-card__link" href="#free-scroll">
-            <div class="scroll-card__art">
-              <svg viewBox="0 0 300 200" aria-hidden="true">
-                <g fill="none" stroke="#C5A55A" stroke-width=".9">
-                  <ellipse cx="150" cy="176" rx="118" ry="14" opacity=".35"/><ellipse cx="150" cy="160" rx="104" ry="12.5" opacity=".4"/>
-                  <ellipse cx="150" cy="145" rx="90" ry="11" opacity=".45"/><ellipse cx="150" cy="131" rx="78" ry="9.6" opacity=".5"/>
-                  <ellipse cx="150" cy="118" rx="66" ry="8.4" opacity=".55"/><ellipse cx="150" cy="106" rx="55" ry="7.2" opacity=".6"/>
-                  <ellipse cx="150" cy="95" rx="45" ry="6" opacity=".65"/><ellipse cx="150" cy="85" rx="36" ry="5" opacity=".7"/>
-                  <ellipse cx="150" cy="76" rx="28" ry="4" opacity=".75"/><ellipse cx="150" cy="68" rx="21" ry="3.2" opacity=".8"/>
-                  <ellipse cx="150" cy="61" rx="15" ry="2.4" opacity=".85"/><ellipse cx="150" cy="55" rx="10" ry="1.8" opacity=".9"/>
-                </g>
-                <g stroke="#F3EAD3" stroke-width="1.6" stroke-linecap="round" stroke-dasharray=".1 12" fill="none" opacity=".7">
-                  <ellipse cx="150" cy="176" rx="118" ry="14"/><ellipse cx="150" cy="145" rx="90" ry="11"/><ellipse cx="150" cy="118" rx="66" ry="8.4"/><ellipse cx="150" cy="95" rx="45" ry="6"/>
-                </g>
-                <circle cx="150" cy="38" r="6" fill="#FFF4D6"/><circle cx="150" cy="38" r="16" fill="#D4B86A" opacity=".18"/>
-                <path d="M150 20 V58" stroke="#FFF4D6" stroke-width=".8" opacity=".6"/>
-              </svg>
-            </div>
-            <div class="scroll-card__body">
-              <p class="eyebrow eyebrow--gold eyebrow--sm">Scroll 144 <span aria-hidden="true">·</span> Free</p>
-              <h3 class="scroll-card__title">The Ascent of the I AM</h3>
-              <p class="scroll-card__line">The first scroll most seekers open. Sent to your inbox when you enter the library.</p>
-            </div>
+            <span class="scroll-card__num" aria-hidden="true">144</span>
+            <h3 class="scroll-card__title">The Ascent of the I AM</h3>
+            <p class="scroll-card__line">The first scroll most seekers open. Sent to your inbox when you enter the library.</p>
+            <span class="scroll-card__foot">
+              <span>Scroll 144 <span aria-hidden="true">·</span> Free</span>
+              <svg class="scroll-card__arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6 H22 M17 1 l5 5 -5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </span>
           </a>
         </li>
         <li class="scroll-card reveal">
-          <div class="scroll-card__art">
-            <svg viewBox="0 0 300 200" aria-hidden="true">
-              <path d="M0 172 C60 160 120 176 170 168 C220 160 260 170 300 164 V200 H0z" fill="#06060A" opacity=".8"/>
-              <g fill="#0D0D12" stroke="#C5A55A" stroke-width="1">
-                <path d="M34 172 V124 a15 15 0 0 1 30 0 V172z" opacity=".45"/>
-                <path d="M84 172 V108 a16 16 0 0 1 32 0 V172z" opacity=".6"/>
-                <path d="M136 172 V92 a17 17 0 0 1 34 0 V172z" opacity=".75"/>
-                <path d="M190 172 V78 a18 18 0 0 1 36 0 V172z" opacity=".9"/>
-                <path d="M244 172 V62 a19 19 0 0 1 38 0 V172z"/>
-              </g>
-              <g stroke="#C5A55A" stroke-width=".7" opacity=".7">
-                <path d="M93 128 H107 M93 136 H107 M93 144 H104"/><path d="M145 112 H161 M145 120 H161 M145 128 H157 M145 136 H161"/>
-                <path d="M199 98 H217 M199 106 H217 M199 114 H212 M199 122 H217 M199 130 H214"/>
-                <path d="M253 82 H273 M253 90 H273 M253 98 H268 M253 106 H273 M253 114 H270 M253 122 H273"/>
-              </g>
-              <circle cx="263" cy="40" r="22" fill="#D4B86A" opacity=".14"/>
-            </svg>
-          </div>
-          <div class="scroll-card__body">
-            <p class="eyebrow eyebrow--gold eyebrow--sm">Scroll 786</p>
-            <h3 class="scroll-card__title">The Blueprint of Eternity</h3>
-            <p class="scroll-card__line">Five tablets, from the dark substrate to the prodigal curriculum.</p>
-          </div>
+          <span class="scroll-card__num" aria-hidden="true">786</span>
+          <h3 class="scroll-card__title">The Blueprint of Eternity</h3>
+          <p class="scroll-card__line">Five tablets, from the dark substrate to the prodigal curriculum.</p>
+          <span class="scroll-card__foot"><span>Scroll 786</span></span>
         </li>
         <li class="scroll-card reveal">
-          <div class="scroll-card__art">
-            <svg viewBox="0 0 300 200" aria-hidden="true">
-              <defs>
-                <radialGradient id="orb" cx=".5" cy=".5" r=".5">
-                  <stop offset="0" stop-color="#FFFBEE"/><stop offset=".55" stop-color="#F3E3B0"/><stop offset="1" stop-color="#C5A55A" stop-opacity="0"/>
-                </radialGradient>
-              </defs>
-              <circle cx="150" cy="84" r="58" fill="#C5A55A" opacity=".08"/>
-              <circle cx="150" cy="84" r="34" fill="url(#orb)"/>
-              <g fill="none" stroke="#C5A55A" stroke-width="1">
-                <ellipse cx="150" cy="84" rx="52" ry="14" opacity=".8" transform="rotate(-12 150 84)"/>
-                <ellipse cx="150" cy="84" rx="64" ry="20" opacity=".55" transform="rotate(8 150 84)"/>
-                <ellipse cx="150" cy="84" rx="76" ry="26" opacity=".35" transform="rotate(-3 150 84)"/>
-              </g>
-              <path d="M0 158 H300" stroke="#C5A55A" stroke-width=".6" opacity=".4"/>
-              <ellipse cx="150" cy="178" rx="30" ry="8" fill="#F3E3B0" opacity=".22"/>
-              <ellipse cx="150" cy="178" rx="60" ry="3" fill="#C5A55A" opacity=".16"/>
-            </svg>
-          </div>
-          <div class="scroll-card__body">
-            <p class="eyebrow eyebrow--gold eyebrow--sm">Scroll 999</p>
-            <h3 class="scroll-card__title">The Perfection of Perfection</h3>
-            <p class="scroll-card__line">Light at full power — the close of the number trilogy.</p>
-          </div>
+          <span class="scroll-card__num" aria-hidden="true">999</span>
+          <h3 class="scroll-card__title">The Perfection of Perfection</h3>
+          <p class="scroll-card__line">Light at full power — the close of the number trilogy.</p>
+          <span class="scroll-card__foot"><span>Scroll 999</span></span>
         </li>
       </ul>
 
       <div class="scrolls__cta reveal">
-        <a class="btn btn--secondary" href="#free-scroll">Enter the Library</a>
+        <a class="btn btn--ink" href="#free-scroll">Enter the Library</a>
       </div>
     </section>
 
-    <!-- ═════════ 7. FREE SCROLL (parchment) ═════════ -->
-    <section class="free parchment" id="free-scroll" aria-labelledby="free-title">
+    <!-- ═════════ THE FREE SCROLL ═════════ -->
+    <section class="free night" id="free-scroll" aria-labelledby="free-title">
+      <picture class="free__art" aria-hidden="true">
+        <source media="(max-width: 600px)" srcset="assets/hero-portrait.webp" type="image/webp">
+        <source srcset="assets/hero-1280.webp 1280w, assets/hero-1920.webp 1920w" sizes="100vw" type="image/webp">
+        <img src="assets/hero-1280.jpg" alt="" width="1280" height="724" loading="lazy" decoding="async">
+      </picture>
       <div class="free__inner">
-        <p class="eyebrow eyebrow--ink reveal">The Free Scroll</p>
-        <span class="rule rule--ink rule--center reveal" aria-hidden="true"></span>
-        <h2 class="h2 reveal" id="free-title">Scroll 144: The Ascent of the I AM</h2>
-        <p class="reveal">Enter your email and the scroll is sent to you. One scroll to begin. Leave anytime.</p>
+        <p class="eyebrow reveal">The Free Scroll</p>
+        <h2 class="h2 h2--display reveal" id="free-title">
+          <span class="h2__line">Scroll 144:</span>
+          <em class="h2__line">The Ascent of the I AM</em>
+        </h2>
+        <span class="star-rule reveal" aria-hidden="true"><svg><use href="#star"/></svg></span>
+        <p class="free__intro reveal">Enter your email and the scroll is sent to you. One scroll to begin. Leave anytime.</p>
 
         <form class="free__form reveal" novalidate>
           <label for="email" class="free__label">Your email</label>
           <div class="free__row">
             <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="free-status">
-            <button class="btn btn--primary btn--ink" type="submit">Receive the Scroll</button>
+            <button class="btn btn--primary" type="submit">Receive the Scroll</button>
           </div>
           <p class="free__status" id="free-status" role="status" aria-live="polite"></p>
         </form>
@@ -563,14 +402,13 @@
     </section>
   </main>
 
-  <!-- ═════════ 8. FOOTER ═════════ -->
+  <!-- ═════════ FOOTER ═════════ -->
   <footer class="site-footer">
     <div class="footer__grid">
       <div class="footer__brand">
         <svg class="footer__emblem" aria-hidden="true"><use href="#emblem"/></svg>
         <p class="footer__name">The Sphere of Light</p>
         <p class="footer__tag">A Temple Library</p>
-        <span class="rule rule--center" aria-hidden="true"></span>
         <p class="footer__line">Sealed scrolls and books on the hidden architecture of God’s eternal plan.</p>
       </div>
 
@@ -601,6 +439,7 @@
     </div>
 
     <blockquote class="footer__quote">
+      <span class="star-rule" aria-hidden="true"><svg><use href="#star"/></svg></span>
       <p>“And the city had no need of the sun, neither of the moon, to shine in it: for the glory of God did lighten it.”</p>
       <cite>Revelation 21:23</cite>
     </blockquote>
