@@ -482,7 +482,8 @@ body.menu-open { overflow: hidden; }
   .parchment .scrolls__aside { text-align: right; }
 }
 .scrolls__grid { max-width: var(--max); margin: 0 auto; display: grid; gap: 1.25rem; }
-@media (min-width: 900px) { .scrolls__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; } }
+@media (min-width: 760px) { .scrolls__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .scroll-card, .scroll-card--lead .scroll-card__link { padding-inline: 1.5rem; } }
+@media (min-width: 1100px) { .scrolls__grid { gap: 1.5rem; } .scroll-card, .scroll-card--lead .scroll-card__link { padding-inline: 1.9rem; } }
 
 .scroll-card {
   position: relative; display: flex; flex-direction: column;
@@ -492,7 +493,7 @@ body.menu-open { overflow: hidden; }
   transition: border-color .45s var(--ease), background-color .45s var(--ease);
 }
 .scroll-card__link { display: flex; flex-direction: column; flex: 1; color: inherit; text-decoration: none; }
-.scroll-card--lead { padding: 0; }
+.scroll-card.scroll-card--lead { padding: 0; }
 .scroll-card--lead .scroll-card__link { padding: 2rem 1.9rem 1.4rem; }
 .scroll-card__num { font-family: var(--serif); font-size: clamp(3.4rem, 5.4vw, 4.4rem); line-height: 1; color: var(--numeral); letter-spacing: .04em; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
 .scroll-card__title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 2.4vw, 1.95rem); line-height: 1.15; color: var(--ink); margin: 1.5rem 0 1.5rem; }
@@ -556,7 +557,8 @@ body.menu-open { overflow: hidden; }
 }
 .footer__grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.5rem; }
 .footer__brand { grid-column: 1 / -1; }
-@media (min-width: 760px) {
+@media (min-width: 640px) { .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1000px) {
   .footer__grid { grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 2rem; }
   .footer__brand { grid-column: auto; }
 }
